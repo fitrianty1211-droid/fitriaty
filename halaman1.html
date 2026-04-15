@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Biodata diri</title>
+  <style>
+    :root {
+      --bg1: #e8efe1;
+      --bg2: #c9d6bf;
+      --accent: #556b2f;
+      --accent2: #3e4f1c;
+      --text: #24311a;
+      --card: rgba(255,255,255,0.72);
+      --shadow: 0 10px 30px rgba(62,79,28,0.18);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(85,107,47,0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(62,79,28,0.14), transparent 30%),
+        linear-gradient(135deg, var(--bg1), var(--bg2));
+    }
+    header {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .invitation {
+      width: min(960px, 100%);
+      background: var(--card);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.7);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .hero {
+      padding: 56px 28px 34px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(85,107,47,0.14), rgba(62,79,28,0.10));
+      border-bottom: 1px solid rgba(255,255,255,0.7);
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: clamp(2rem, 5vw, 3.6rem);
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .hero p {
+      margin: 12px 0 0;
+      font-size: 1.05rem;
+    }
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+      padding: 18px 20px 28px;
+    }
+    nav a {
+      text-decoration: none;
+      color: white;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      padding: 12px 18px;
+      border-radius: 999px;
+      box-shadow: 0 8px 18px rgba(62,79,28,0.22);
+      font-weight: 700;
+    }
+    section {
+      padding: 34px 24px;
+      margin: 0 18px 18px;
+      background: rgba(255,255,255,0.62);
+      border-radius: 22px;
+      box-shadow: 0 8px 24px rgba(36,49,26,0.08);
+    }
+    section h2 {
+      margin-top: 0;
+      color: var(--accent2);
+      border-left: 6px solid var(--accent);
+      padding-left: 12px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .card {
+      background: rgba(255,255,255,0.8);
+      border-radius: 18px;
+      padding: 18px;
+      border: 1px solid rgba(85,107,47,0.12);
+    }
+    ul { margin: 0; padding-left: 20px; }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 14px;
+    }
+    .ph {
+      aspect-ratio: 1/1;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(85,107,47,0.18), rgba(62,79,28,0.18));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--text);
+      border: 2px dashed rgba(36,49,26,0.18);
+    }
+    video {
+      width: 100%;
+      border-radius: 18px;
+      display: block;
+      background: #000;
+    }
+    footer {
+      text-align: center;
+      padding: 18px 24px 30px;
+      color: rgba(36,49,26,0.8);
+    }
+    .small { font-size: 0.95rem; line-height: 1.7; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="invitation">
+      <div class="hero">
+        <h1>FITRIATY 23107152200007</h1>
+        <p>Tugas Sistem Informasi Manajemen Perikanan</p>
+      </div>
+      <nav>
+        <a href="#index">Halaman</a>
+        <a href="#biodata">Biodata Diri</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#video">Video</a>
+      </nav>
+    </div>
+  </header>
+
+  <main style="max-width: 980px; margin: 0 auto 40px;">
+    <section id="Index">
+      <h2> FITRIATY 2310715220007</h2>
+      <div class="card">
+        <ul>
+          <li>Perkenlkan saya Fitriaty, saya mahasiswi Program Studi Sosial Ekonomi Perikanan</li>
+          <li>Fakultas Perikanan Dan Ilmu Kelautan, Universitas Lambung Mangkurat</li>
+          <li>Saya mahasiswi dari angkatan 2023</li>
+          <li>Daftar Halaman: Halamanan, Biodata, Gallery, Vodio</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="biodata">
+      <h2>2. Biodata Diri</h2>
+      <div class="grid">
+        <div class="card"><strong>Nama:</strong><br>Fitriaty</div>
+        <div class="card"><strong>Asal Daerah:</strong><br>Desa Ringkit, Kecamatan kuranji, Kabupaten Tanah Bumbu</div>
+        <div class="card"><strong>Pendidikan:</strong><br>S-1 Sosial Ekonomi Perikanan</div>
+        <div class="card"><strong>Tempat, Tanggal Lahir:</strong><br>Tanah Bumbu, 12 November 2004</div>
+        <div class="card"><strong>Umur, Hobi, Cita-cita:</strong><br> 21, Main Voly dan Badminton, "Pengusaha Sukses"</div>
+        <div class="card"><strong>Motto Hidup</strong><br>Jadikan lah semua luka menjadi pembelajaran untuk memperbaiki diri dan jadikan lah pengalaman itu menjadi bekal melanjutkan hidup.</div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <h2>3. Gallery</h2>
+      <div class="gallery">
+        <img src="FOTO 1.jpeg" width="200" class="ph">Foto 1 tampak depan aera rumah</div>
+        <img src="FOTO 2.jpeg" width="200" class="ph">Foto 2 tampak belakang area rumah</div> 
+        <img src="FOTO 3.jpeg" width="200" class="ph">Foto 3 tampak kanan area rumah</div>
+        <img src="FOTO 4.jpeg" width="200" class="ph">Foto 4 tampak kiri area rumah</div>
+      </div>
+    </section>
+
+    <section id="video">
+      <h2>4. VIDIO</h2>
+      <div class="card">
+        <video controls>
+          <source src="VID 1.mp4" type="video/mp4">
+          Browser Anda tidak mendukung pemutar video.
+        </video>
+        <p class="small"> Area<strong> Rumah</strong> dan ini kondisi rumah saya</p>
+      </div>
+    </section>
+  </main>
+</div> 
+<div class="menu-nav">
+   <a href="index.html">➡️🏠 Home</a>
+  <a href="halaman2.html" class="home-btn">➡️ Kembali ke tugas 2</a>
+  </footer>
+</body>
+</html>'''

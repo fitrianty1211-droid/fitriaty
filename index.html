@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitriaty</title>
+    <style>
+        :root {
+            --army-green: #4a7043;
+            --army-dark: #2f4f2f;
+            --tactical-grey: #5c6b5c;
+            --orange-alert: #ff8c00;
+            --sand-beige: #d4c9a2;
+            --shadow-tactical: 0 25px 60px rgba(74,112,67,0.4);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Courier New', 'Consolas', monospace; 
+            background: linear-gradient(135deg, var(--army-green) 0%, var(--army-dark) 30%, var(--tactical-grey) 100%); 
+            min-height: 100vh; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            padding: 30px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,0.03) 2px, rgba(255,255,255,0.03) 4px),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,0.02) 2px, rgba(255,255,255,0.02) 4px);
+            pointer-events: none;
+            z-index: -1;
+            animation: scanline 20s linear infinite;
+        }
+        @keyframes scanline {
+            0% { background-position: 0 0, 0 0; }
+            100% { background-position: 100px 100px, 100px 100px; }
+        }
+        .container { 
+            background: linear-gradient(145deg, rgba(45,79,47,0.95), rgba(74,112,67,0.92)); 
+            backdrop-filter: blur(25px); 
+            padding: 85px 70px; 
+            border-radius: 20px; 
+            box-shadow: var(--shadow-tactical); 
+            max-width: 620px; 
+            width: 100%;
+            border: 3px solid rgba(255,140,0,0.6);
+            position: relative;
+            z-index: 2;
+        }
+        .container::after {
+            content: 'CLASSIFIED';
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            color: rgba(255,140,0,0.3);
+            font-size: 0.7em;
+            font-weight: bold;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            transform: rotate(10deg);
+        }
+        .header { 
+            text-align: center; 
+            margin-bottom: 65px; 
+        }
+        .mission-patch { 
+            font-size: 5em; 
+            background: linear-gradient(135deg, var(--orange-alert) 0%, var(--sand-beige) 50%, var(--army-green) 100%); 
+            -webkit-background-clip: text; 
+            -webkit-text-fill-color: transparent; 
+            margin-bottom: 30px; 
+            display: block;
+            filter: drop-shadow(0 8px 25px rgba(255,140,0,0.6));
+            animation: missionPulse 2s ease-in-out infinite;
+        }
+        @keyframes missionPulse {
+            0%, 100% { filter: drop-shadow(0 8px 25px rgba(255,140,0,0.6)); transform: scale(1); }
+            50% { filter: drop-shadow(0 12px 35px rgba(255,140,0,0.9)); transform: scale(1.05); }
+        }
+        h1 { 
+            color: #e8e8e8; 
+            font-size: 2.8em; 
+            font-weight: 700; 
+            letter-spacing: 4px; 
+            margin-bottom: 18px;
+            text-shadow: 0 6px 25px rgba(0,0,0,0.8);
+            text-transform: uppercase;
+        }
+        .subtitle { 
+            color: #b8c5b8; 
+            font-size: 1.35em; 
+            font-weight: 500; 
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .prodi { 
+            color: var(--orange-alert); 
+            font-weight: 700; 
+            font-size: 1.25em;
+            letter-spacing: 3px;
+            text-shadow: 0 4px 15px rgba(255,140,0,0.8);
+            text-transform: uppercase;
+        }
+        
+        .daftar-buttons { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 45px;
+        }
+        .tugas-btn { 
+            position: relative; 
+            padding: 35px 55px; 
+            font-size: 1.55em; 
+            font-weight: 800; 
+            border: 3px solid rgba(255,140,0,0.8); 
+            border-radius: 25px; 
+            cursor: pointer; 
+            text-decoration: none; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 18px; 
+            transition: all 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            overflow: hidden;
+            font-family: inherit;
+            backdrop-filter: blur(30px);
+            box-shadow: 0 15px 45px rgba(0,0,0,0.4);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .tugas-btn::before { 
+            content: ''; 
+            position: absolute; 
+            top: 0; 
+            left: -150%; 
+            width: 150%; 
+            height: 100%; 
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent); 
+            transition: left 0.9s;
+        }
+        .tugas-btn:hover::before { left: 150%; }
+        
+        .tugas1 { 
+            background: linear-gradient(135deg, var(--sand-beige) 0%, rgba(212,201,162,0.9) 100%); 
+            color: var(--army-dark); 
+        }
+        .tugas1:hover { 
+            transform: translateY(-18px) rotate(2deg); 
+            border-color: var(--orange-alert); 
+            box-shadow: 0 40px 80px rgba(255,140,0,0.5);
+        }
+        
+        .tugas2 { 
+            background: linear-gradient(135deg, var(--army-green) 0%, var(--tactical-grey) 100%); 
+            color: #0f4620; 
+        }
+        .tugas2:hover { 
+            transform: translateY(-18px) rotate(-2deg); 
+            border-color: var(--orange-alert); 
+            box-shadow: 0 40px 80px rgba(14, 90, 33, 0.6);
+        }
+        
+        .btn-icon { 
+            font-size: 2.5em; 
+            filter: drop-shadow(0 4px 15px rgba(0,0,0,0.5));
+        }
+        .btn-title { 
+            font-size: 1.35em; 
+            letter-spacing: 4px; 
+            font-weight: 900;
+        }
+        .btn-subtitle { 
+            font-size: 1em; 
+            opacity: 0.95; 
+            font-weight: 600; 
+            letter-spacing: 2px;
+        }
+        
+        footer { 
+            margin-top: 100px; 
+            color: #b0e2b0; 
+            font-size: 1.15em; 
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+            text-transform: uppercase;
+        }
+        
+        @media (max-width: 600px) {
+            .container { padding: 70px 50px; margin: 25px; }
+            h1 { font-size: 2.4em; }
+            .mission-patch { font-size: 4em; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="mission-patch">🎖️</div>
+            <h1>Fitriaty</h1>
+            <p class="subtitle">FAKULTAS PERIKANAN DAN KELAUTAN</p>
+            <p class="prodi">SOSIAL EKONOMI PERIKANAN </p>
+        </div>
+        
+        <div class="daftar-buttons">
+            <a href="halaman1.html" class="tugas-btn tugas1" target="_blank">
+                <span class="btn-icon">🐣</span>
+                <span class="btn-title">TUGAS 1</span>
+                <span class="btn-subtitle">BIODATA DIRI</span>
+            </a>
+            <a href="halaman2.html" class="tugas-btn tugas2" target="_blank">
+                <span class="btn-icon">🌸</span>
+                <span class="btn-title">TUGAS 2</span>
+                <span class="btn-subtitle">FORM</span>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p style="text-align: center;"> UNIVERSITAS LAMBUNG MANGKURAT
+        <p style="text-align: center;"> FAKULTAS PERIKANAN DAN ILMU KELAUTAN
+        <p style="text-align: center;"> SOSIAL EKONOMI PERIKANAN
+    </footer>
+</body>
+</html>

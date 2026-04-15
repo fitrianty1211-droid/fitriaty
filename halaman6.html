@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fitriaty</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #486341;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 750px;
+      margin: auto;
+      background: rgb(89, 124, 88);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 12px rgba(150, 74, 74, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #110e0e;
+      border-radius: 6px;
+      box-sizing: border-box;
+    }
+
+    .radio-group {
+      display: flex;
+      gap: 20px;
+      margin-top: 6px;
+    }
+
+    .radio-group label {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: normal;
+      margin-bottom: 0;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background: #007bff;
+      color: rgb(173, 161, 161);
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+
+    hr {
+      margin: 25px 0;
+    }
+
+    small {
+      color: #7a7676;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Input Data Transaksi Keuangan</h1>
+    <div class="form-group">
+        <label for="Hari Transaksi">Hari</label>
+        <select id="Hari_Transaksi" name="Hari_Transaksi" required>
+          <option value="">-- Pilih Hari Transaksi --</option>
+          <option value="Minggu">Minggu</option><option value="Senin">Senin</option><option value="Selasa">Selasa</option><option value="Rabu">Rabu</option><option value="Kamis">Kamis</option>
+        <value="Jumat">Jumat</option><option value="Sabtu">Sabtu</option>
+        </select>
+         <div class="form-group">
+        <label for="Bulan Transaksi">Bulan</label>
+        <select id="Bulan_Transaksi" name="Bulan_Transaksi" required>
+          <option value="">-- Pilih Bulan Transaksi --</option>
+          <option value="Januari">Januari</option><option value="Februari">Februari</option><option value="Maret">Maret</option><option value="April">April</option><option value="Mei">Mei</option>
+          <option value="Juni">juni</option><option value="Juli">Juli</option><option value="Agustus">Agustus</option><option value="September">September</option><option value="Oktober">Oktober</option>
+          <option value="November">November</option><option value="Desember">Desembaer</option>
+        </select>
+    <div class="form-group">
+        <label for="Tahun Transaksi">Tahun</label>
+        <select id="Tahun_Transaksi" name="Tahun_Transaksi" required>
+          <option value="">-- Pilih Tahun Transaksi --</option>
+          <option value="2026">2026</option><option value="2025">2025</option><option value="2024">2024</option><option value="2023">2023</option><option value="2022">2022</option>
+          <option value="2021">2021</option><option value="2020">2020</option><option value="2019">2019</option><option value="2018">2018</option><option value="2017">2017</option>
+        </select>
+
+
+        <label for="uraian">Uraian Transaksi:</label>
+        <input type="text" id="uraian" name="uraian" required>
+
+        <label>Jenis Transaksi:</label>
+        <div class="radio-group">
+            <label><input type="radio" name="jenis" value="Debet" required> Debet</label>
+            <label><input type="radio" name="jenis" value="Kredit" required> Kredit</label>
+        </div>
+
+        <label for="nominal">Nominal (Rp):</label>
+        <input type="number" id="nominal" name="nominal" min="0" step="0.01" required>
+
+        </div>
+    <div id="output"></div>
+    <div style="margin-bottom: 20px;">
+        <a href="halamnan5.html" style="text-decoration: none;">
+            <button type="button" style="background-color: #fbec66; color:#2c3e50; padding: 10px 15px; border: none; border-radius: 5px; cursor: pointer;">
+             Kirim
+            </button>
+    </form>
+
+    <table id="transaksiTable" style="display: none;">
+        <thead>
+            <tr>
+                <th>Tanggal</th>
+                <th>Uraian</th>
+                <th>Jenis</th>
+                <th>Debet</th>
+                <th>Kredit</th>
+            </tr>
+        </thead>
+        <tbody id="transaksiBody"></tbody>
+    </table>
+
+    <script>
+        
+    </script>
+</body>
+</html>
